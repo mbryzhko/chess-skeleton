@@ -64,7 +64,7 @@ public class CLI {
                 } else if (input.equals("board")) {
                     writeOutput("Current Game:");
                 } else if (input.equals("list")) {
-                    writeOutput("====> List Is Not Implemented (yet) <====");
+                    doCalculateAvailableMoves();
                 } else if (input.startsWith("move")) {
                     writeOutput("====> Move Is Not Implemented (yet) <====");
                 } else {
@@ -72,6 +72,13 @@ public class CLI {
                 }
             }
         }
+    }
+
+    private void doCalculateAvailableMoves() {
+        writeOutput(gameState.getCurrentPlayer() + "'s Possible Moves:");
+        gameState.getAllPossibleMoves().forEach(move ->
+                writeOutput(move.getFrom().getEncodedValue() + " " + move.getTo().getEncodedValue())
+        );
     }
 
     private void doNewGame() {

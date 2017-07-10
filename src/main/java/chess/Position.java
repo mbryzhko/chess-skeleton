@@ -1,5 +1,7 @@
 package chess;
 
+import chess.pieces.Piece;
+
 /**
  * Describes a position on the Chess Board
  */
@@ -63,6 +65,14 @@ public class Position {
     @Override
     public String toString() {
         return "" + column + row;
+    }
+
+    public String getEncodedValue() {
+        return String.valueOf(column) + row;
+    }
+
+    public static boolean isValidPosition(char column, int row) {
+        return column <= MAX_COLUMN && column >= MIN_COLUMN && row <= MAX_ROW && row >= MIN_ROW;
     }
 
 }

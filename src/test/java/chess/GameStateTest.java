@@ -5,6 +5,7 @@ import chess.pieces.Queen;
 import chess.pieces.Rook;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runners.Parameterized;
 
 import static junit.framework.Assert.*;
 
@@ -49,4 +50,5 @@ public class GameStateTest {
         assertTrue("A queen should be at d8", blackQueen instanceof Queen);
         assertEquals("The queen at d8 should be owned by Black", Player.Black, blackQueen.getOwner());
     }
+
 }
